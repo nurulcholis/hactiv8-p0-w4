@@ -1,56 +1,80 @@
-  function changeVocals (str) {
+  function changeVocals (temp) {
     //code di sini
-    var kamus = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
-    var temp = '';
-    for(var i = 0; i < str.length; i++){
-        for(var j = 0; j < kamus.length; j++){
-            if(str[i] === kamus[j]){
-                temp += kamus[j+1];
-            }
+    var afterSplit = temp.split("");
+    for(var i = 0; i < afterSplit.length; i++){
+        switch(afterSplit[i]){
+            case 'a' : afterSplit.splice(i,1,'b');
+            break;
+            case 'A' : afterSplit.splice(i,1,'B');
+            break;
+            case 'e' : afterSplit.splice(i,1,'f');
+            break;
+            case 'E' : afterSplit.splice(i,1,'F');
+            break;
+            case 'i' : afterSplit.splice(i,1,'j');
+            break;
+            case 'I' : afterSplit.splice(i,1,'J');
+            break;
+            case 'o' : afterSplit.splice(i,1,'p');
+            break;
+            case 'O' : afterSplit.splice(i,1,'P');
+            break;
+            case 'u' : afterSplit.splice(i,1,'v');
+            break;
+            case 'U' : afterSplit.splice(i,1,'V');
+            break;
+            default : 'wrong';
+            break;
         }
     }
-    return temp;
-    
+    afterSplit = afterSplit.join("");
+    return afterSplit;
   }
+
+  //console.log(changeVocals('Alexei'));
   
-  function reverseWord (str) {
+  function reverseWord (temp) {
     //code di sini
-    var temp = '';
-    for(var i = str.length-1; i >= 0; i--){
-        temp += str[i];
+    var empty = '';
+    for(var i = temp.length-1; i >= 0; i--){
+        empty += temp[i];
     }
-    return temp;
+    return empty;
   }
+
+  //console.log(reverseWord('Alexei'));
   
-  function setLowerUpperCase (str) {
+  function setLowerUpperCase (temp) {
     //code di sini
     var kalimatTukar = '';
-    for (var i = 0; i < str.length; i++) {
-        kalimatTukar += str[i] !== str[i].toLowerCase() ? str[i].toLowerCase() : str[i].toUpperCase()
+    for (var i = 0; i < temp.length; i++) {
+        kalimatTukar += temp[i] !== temp[i].toLowerCase() ? temp[i].toLowerCase() : temp[i].toUpperCase()
     }
     return kalimatTukar;
   }
+
+  //console.log(setLowerUpperCase('Alexei'));
   
-  function removeSpaces (str) {
+  function removeSpaces (temp) {
     //code di sini
-    var temp = '';
+    var empty = '';
     var arr = [];
-    for(var i = 0; i < str.length; i++){
-        if(str[i] !== ' '){
-            temp += str[i];
+    for(var i = 0; i < temp.length; i++){
+        if(temp[i] !== ' '){
+            empty += temp[i];
         }else{
-            arr.push(temp);
-            temp = '';
+            arr.push(empty);
+            empty = '';
         }
-        if(i === str.length - 1){
-            arr.push(temp);
+        if(i === temp.length - 1){
+            arr.push(empty);
         }
     }
-    temp = '';
+    empty = '';
     for(var j = 0; j < arr.length; j++){
-        temp += arr[j];
+        empty += arr[j];
     }
-    return temp;
+    return empty;
   }
   
   function passwordGenerator (name) {
@@ -63,8 +87,9 @@
         name = removeSpaces(name);
         return name;
     }
-  }
+}
 
+//changeVocals('Sergei Dragunov');
   console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
   console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
   console.log(passwordGenerator('Alexei')); // 'JFXFLb'
