@@ -1,35 +1,13 @@
 function checkAB(num) {
     // you can only write your code here!
-    var temp = '';
-    var valA = 0;
-    var valB = 0;
-    var gap = 0;
-    var distance = 0;
-
-    temp = num.split(" ");
-    temp = temp.join("");
-   
-    for(var i = 0; i < temp.length; i++){
-        if(temp[i] === 'a'){
-            valA = i;
+    for(var i = 0; i < num.length; i++){
+        if(num[i] === 'a' && num[i+4] === 'b'){
+            return true;
+        }else if(num[i] === 'b' && num[i+4] === 'a'){
+            return true;
         }
     }
-
-    for(var i = 0; i < temp.length; i++){
-        if(temp[i] === 'b'){
-            valB = i;
-            gap = Math.abs(valA - valB);
-            if(distance < gap){
-                distance = gap;
-            }
-        }
-        
-    }
-    if(distance === 3){
-        return true;
-    }else{
-        return false;
-    }
+    return false;
   }
   
   // TEST CASES
