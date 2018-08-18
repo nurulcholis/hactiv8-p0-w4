@@ -1,7 +1,7 @@
 function sorting(arrNumber) {
     // code di sini
     return arrNumber.sort(function(x,y){
-        return x < y;
+        return y-x;
     });
   }
   
@@ -31,6 +31,8 @@ function sorting(arrNumber) {
     return countHighest;
   }
   
+  console.log(mostFrequentLargestNumbers([2, 8, 4, 6, 8, 5, 8, 4, 10, 10, 10]));
+
   console.log(mostFrequentLargestNumbers([2, 8, 4, 6, 8, 5, 8, 4]));
   //'angka paling besar adalah 8 dan jumlah kemunculan sebanyak 3 kali'
 
