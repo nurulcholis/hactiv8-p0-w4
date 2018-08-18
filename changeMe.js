@@ -2,7 +2,7 @@ function changeMe(arr) {
     // you can only write your code here!
     me = {};
     if(arr.length === 0){
-        console.log([]);
+        console.log('""');
     }
     var old = null;
     for(var i = 0; i < arr.length; i++){

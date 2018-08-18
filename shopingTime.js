@@ -8,7 +8,7 @@ function shoppingTime(memberId, money) {
         ['Casing Handphone',50000] 
     ];
     //var arr = [];
-    if(money !== undefined && memberId !== undefined){
+    if(money !== undefined && memberId !== undefined && memberId !== ''){
         var shopping = {};
         var total = 0;
         shopping.memberId = memberId;
@@ -32,7 +32,7 @@ function shoppingTime(memberId, money) {
   }
   
   // TEST CASES
-  console.log(shoppingTime('1820RzKrnWn08', 2475000));
+  //console.log(shoppingTime('1820RzKrnWn08', 2475000));
     //{ memberId: '1820RzKrnWn08',
     // money: 2475000,
     // listPurchased:
@@ -48,6 +48,6 @@ function shoppingTime(memberId, money) {
   // listPurchased:
   //  [ 'Casing Handphone' ],
   // changeMoney: 120000 }
-  //console.log(shoppingTime('', 2475000)); //Mohon maaf, toko X hanya berlaku untuk member saja
+  console.log(shoppingTime('', 2475000)); //Mohon maaf, toko X hanya berlaku untuk member saja
   //console.log(shoppingTime('234JdhweRxa53', 15000)); //Mohon maaf, uang tidak cukup
   //console.log(shoppingTime()); ////Mohon maaf, toko X hanya berlaku untuk member saja
