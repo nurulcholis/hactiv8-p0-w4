@@ -17,6 +17,9 @@ function ubahHuruf(str){
     }
 
     for(var i = 0; i < arrBaru.length; i++){
+        if(arrBaru[i] === 26){
+            arrBaru[i] = 0;
+        }
         temp += kamus[arrBaru[i]];
     }
 
@@ -29,3 +32,4 @@ console.log(ubahHuruf('developer')); // efwfmpqfs
 console.log(ubahHuruf('javascript')); // kbwbtdsjqu
 console.log(ubahHuruf('keren')); // lfsfo
 console.log(ubahHuruf('semangat')); // tfnbohbu
+console.log(ubahHuruf('hizam')); // ijabn
